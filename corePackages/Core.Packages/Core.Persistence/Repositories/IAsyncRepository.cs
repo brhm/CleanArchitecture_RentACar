@@ -27,7 +27,7 @@ public interface IAsyncRepository<TEntity,TEntityId>:IQuery<TEntity>
         int index = 0,
         int size = 10,
         bool withDeleted = false,
-        bool enableTracing = true,
+        bool enableTracking = true,
         CancellationToken cancellationToken = default
         );
     Task<Paginate<TEntity>> GetListByDynamicAsync(
@@ -38,7 +38,7 @@ public interface IAsyncRepository<TEntity,TEntityId>:IQuery<TEntity>
         int index = 0,
         int size = 10,
         bool withDeleted = false,
-        bool enableTracing = true,
+        bool enableTracking = true,
         CancellationToken cancellationToken = default
         );
     Task<bool> AnyAsync(
