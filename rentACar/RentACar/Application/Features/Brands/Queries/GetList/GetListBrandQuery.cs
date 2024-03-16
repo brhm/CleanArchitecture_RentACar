@@ -18,6 +18,7 @@ public class GetListBrandQuery:IRequest<GetListResponse<GetListBrandListItemDto>
 {
     public PageRequest PageRequest { get; set; }
 
+    // we can create cache with private func.
     public string CacheKey => $"GetListBrandQuery({PageRequest.PageIndex},{PageRequest.PageSize})";
 
     public bool BypassCache { get;}
