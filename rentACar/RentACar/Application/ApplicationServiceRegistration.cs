@@ -26,10 +26,11 @@ public static class ApplicationServiceRegistration
         services.AddMediatR(configuration =>
         {
             configuration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
-            // trigger fluent validation 
+            // trigger Pipeline from Core packages 
             configuration.AddOpenBehavior(typeof(RequestValidationBehavior<,>));
             configuration.AddOpenBehavior(typeof(TransactionScopeBehavior<,>));
             configuration.AddOpenBehavior(typeof(CachingBehavior<,>));
+            configuration.AddOpenBehavior(typeof(CacheRemovingBehavior<,>));
         });
 
         return services;

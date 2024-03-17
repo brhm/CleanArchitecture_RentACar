@@ -17,13 +17,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Persistence\Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Core.Application">
-      <HintPath>..\..\..\corePackages\Core.Packages\Core.Application\bin\Release\net8.0\Core.Application.dll</HintPath>
+      <HintPath>..\..\..\corePackages\Core.Packages\Core.Application\bin\Debug\net8.0\Core.Application.dll</HintPath>
     </Reference>
     <Reference Include="Core.CrossCuttingConcerns">
       <HintPath>..\..\..\corePackages\Core.Packages\Core.CrossCuttingConcerns\bin\Release\net8.0\Core.CrossCuttingConcerns.dll</HintPath>
