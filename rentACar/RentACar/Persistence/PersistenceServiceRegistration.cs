@@ -1,4 +1,5 @@
 ﻿using Application.Services.Repositories;
+using Core.Security.OtpAuthenticator;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +24,13 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IFuelRepository, FuelRepository>();
         services.AddScoped<IModelRepository, ModelRespository>();
         services.AddScoped<ITransmissionRepository, TransmissionRepository>();
+
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
+        services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
+        services.AddScoped<IEmailAuthenticatorRepository, EmailAuthenticatorRepository>();
+        services.AddScoped<IOtpAuthenticatorRepository, OtpAuthenticatorRepository>();
+        services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
 
         return services;
 

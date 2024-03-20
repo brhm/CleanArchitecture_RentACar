@@ -54,16 +54,16 @@ public class EfRepositoryBase<TEntity,TEntityId,TContext>
 
     }
 
-    public bool Any(Expression<Func<TEntity, bool>>? predicate = null, bool withDeleted = false, bool enableTracing = true, CancellationToken cancellationToken = default)
+    public bool Any(Expression<Func<TEntity, bool>>? predicate = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
 
-    public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>>? predicate = null, bool withDeleted = false, bool enableTracing = true, CancellationToken cancellationToken = default)
+    public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>>? predicate = null, bool withDeleted = false, bool enableTracking = true, CancellationToken cancellationToken = default)
     {
 
         IQueryable<TEntity> queryable = Query();
-        if(!enableTracing)
+        if(!enableTracking)
             queryable= queryable.AsNoTracking();
         if(withDeleted)
             queryable=queryable.IgnoreQueryFilters();
